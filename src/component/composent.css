@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    font-size: 35px;
+    color: #333;
+    background: #f1f1f1;
+    transition: all 0.2s ease-in-out;
+}
+
+.contenu.dark {
+    color:#f1f1f1;
+    background: #333;
+}
+
+.contenu.light{
+    color: #333;
+    background: #f1f1f1;
+}
