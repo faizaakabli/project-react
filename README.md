@@ -1,8 +1,7 @@
-# Getting Started with Create React App
+# My first project with React the hangman's game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Fist step
 
-## Available Scripts
 
 In the project directory, you can run:
 
