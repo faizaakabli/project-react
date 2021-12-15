@@ -9,56 +9,73 @@ function CallApi() {
   const [word, setword] = useState(undefined);
   useEffect(() => {
     (async () => {
-      const {data} = await getword();
+      const { data } = await getword();
       setword(data);
     })();
-    return () => {};
+    return () => { };
   }, []);
 
-  const [user, setuser] = useState(undefined);
+  const [score, setScore] = useState(undefined);
   useEffect(() => {
     (async () => {
-      const {data} = await getuser();
-      setuser(data);
+      const { data } = await getScore();
+      setScore(data);
     })();
-    return () => {};
+    return () => { };
   }, []);
 
+  // const [user, setuser] = useState(undefined);
+  // useEffect(() => {
+  //   (async () => {
+  //     const {data} = await getuser();
+  //     setuser(data);
+  //   })();
+  //   return () => {};
+  // }, []);
+
   const handleKeyDown = (event) => {
-      if (GOOD_LETTER.includes(event.key)){
-        console.log('A key was pressed', event.key);
-      }
-    
+    if (GOOD_LETTER.includes(event.key)) {
+      console.log('A key was pressed', event.key);
+    }
+
   };
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-        window.removeEventListener('keydown', handleKeyDown);
-      };
-    }, []);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const getword = async () => {
     const dataJson = await fetch("https://animalfinderapi.herokuapp.com/word");
     return await dataJson.json();
   };
 
-  const getuser = async () => {
-    const dataJson = await fetch("https://animalfinderapi.herokuapp.com/user");
+  const getScore = async () => {
+    const dataJson = await fetch("https://animalfinderapi.herokuapp.com/score");
     return await dataJson.json();
   };
+  // const getuser = async () => {
+  //   const dataJson = await fetch("https://animalfinderapi.herokuapp.com/user");
+  //   return await dataJson.json();
+  // };
 
   if (!word) {
     return <p>waiting</p>;
   }
 
-  return(
+  if (!score) {
+    return <p>waiting</p>;
+  }
+
+  return (
     <div>
-      <p>{word.word}</p>
+      <p>{word.word.charAt(0)}</p>
     </div>
   )
-  
+
 }
 
 export default CallApi;
