@@ -1,5 +1,5 @@
-const modeToggler = ({ isDarkMode = false }) => {
+const DarkLightModeToggler = ({ isDarkMode = false }) => {
 
 };
 
-export default modeToggler;
+export default DarkLightModeToggler;

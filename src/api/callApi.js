@@ -15,14 +15,7 @@ function CallApi() {
     return () => { };
   }, []);
 
-  const [score, setScore] = useState(undefined);
-  useEffect(() => {
-    (async () => {
-      const { data } = await getScore();
-      setScore(data);
-    })();
-    return () => { };
-  }, []);
+
 
   // const [user, setuser] = useState(undefined);
   // useEffect(() => {
@@ -53,10 +46,7 @@ function CallApi() {
     return await dataJson.json();
   };
 
-  const getScore = async () => {
-    const dataJson = await fetch("https://animalfinderapi.herokuapp.com/score");
-    return await dataJson.json();
-  };
+
   // const getuser = async () => {
   //   const dataJson = await fetch("https://animalfinderapi.herokuapp.com/user");
   //   return await dataJson.json();
@@ -66,9 +56,6 @@ function CallApi() {
     return <p>waiting</p>;
   }
 
-  if (!score) {
-    return <p>waiting</p>;
-  }
 
   return (
     <div>

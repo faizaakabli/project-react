@@ -1,3 +1,5 @@
+import {map} from 'lodash'
+
 export default function CurrentWord({CurrentWord, usedLetter}){
     return(
         <div>

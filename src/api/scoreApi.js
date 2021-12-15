@@ -17,16 +17,16 @@ export default function Score() {
     }, [])
 
     return (
-        <div className="score">
+        <card className="score">
             <React.Fragment>
                 {
                     map(datas, (data) =>
                         map(data, (score) =>
-                            <p>{score.username} : {score.score}</p>
+                            <p> <img class="img-avatar" src={score.avatar}></img>  User: {score.username}   score: {score.score}</p>
                         ))
                 }
             </React.Fragment>
-        </div>
+        </card>
     )
 }
 
