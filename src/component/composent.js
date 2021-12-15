@@ -1,14 +1,17 @@
-import React, { useContext } from "react";
-import './composent.css';
-import { themeContext } from "../context/themeContext";
+import {useContext} from 'react' ;
+import './composent.css'
+import { ThemeContext } from './themeContext';
+export default function Contenu() {
 
-export default function Composent(){
-    const {theme} = useContext(themeContext);
-    return(
-        <div className={theme ? 'contenu light' : 
-        'contenu dark'}>
-            <p>Le Pendu</p>
-            
-        </div>
+    const {theme} = useContext(ThemeContext);
+
+    return (
+    <div
+    className={theme ? 'contenu light' : 'contenu dark'}
+    >
+    <h1>Jeu du pendu
+    </h1>
+
+    </div>
     )
-} 
+}
